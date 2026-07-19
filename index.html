@@ -233,17 +233,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;mar
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;
   font-family:var(--font-mono);font-size:11px;color:var(--muted);padding:10px;
 }
-.project-foot{
-  padding:18px 26px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
-}
-.project-foot .muted{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);}
-.drive-btn{
-  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
-  font-family:var(--font-mono);font-size:12.5px;letter-spacing:.02em;
-  padding:10px 16px;border-radius:9px;background:var(--accent-soft);color:var(--accent-ink);
-  border:1px solid #CFE6E6;transition:background .15s, transform .15s;
-}
-.drive-btn:hover{background:#D6EBEB;transform:translateY(-1px);}
 
 /* ---- Experience ---- */
 .exp{
@@ -419,7 +408,6 @@ const CONFIG = {
      media:  list photos & videos. Each item is { type, src }.
              type: "image" or "video"
              src : a Google Drive share link, a YouTube link, or any image/video URL.
-     drive:  optional — a link to the full Drive folder ("view all") button.
   */
   projects: [
     {
@@ -436,7 +424,6 @@ const CONFIG = {
         // { type: "image", src: "PASTE_GOOGLE_DRIVE_OR_IMAGE_LINK" },
         // { type: "video", src: "PASTE_YOUTUBE_OR_DRIVE_VIDEO_LINK" },
       ]
-      //drive: "https://drive.google.com/drive/folders/1vbxps80SwhrdJy5WCazHjbpHWpuyCKAy?usp=sharing"  // e.g. "https://drive.google.com/drive/folders/XXXXXXXX"
     },
     {
       tag: "PRJ-02 · Control Panel",
@@ -555,12 +542,6 @@ const CONFIG = {
       </div>`;
     }).join('');
     const galleryBlock = media.length ? `<div class="gallery">${gallery}</div>` : '';
-    const driveBtn = p.drive
-      ? `<a class="drive-btn" href="${esc(p.drive)}" target="_blank" rel="noopener">▤ View all photos &amp; videos ↗</a>`
-      : `<span class="muted">Media coming soon</span>`;
-    const foot = (p.drive || media.length)
-      ? `<div class="project-foot"><span class="muted">${media.length? media.length+' item'+(media.length>1?'s':'') : ''}</span>${driveBtn}</div>`
-      : `<div class="project-foot">${driveBtn}</div>`;
     return `<article class="project">
       <div class="project-head">
         <span class="idtag">${esc(p.tag||'')}</span>
@@ -572,7 +553,6 @@ const CONFIG = {
         <div class="chips">${chips}</div>
         ${galleryBlock}
       </div>
-      ${foot}
     </article>`;
   }).join('');
   $('#projects-list').innerHTML = projHTML;
