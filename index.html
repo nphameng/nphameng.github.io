@@ -415,7 +415,24 @@ const CONFIG = {
   */
   projects: [
     {
-      tag: "PRJ-01 · Motor Control",
+      tag: "PRJ-01 · AC Motor Control",
+      title: "AC Motor Predictive Maintenance System with VFD & Machine Learning Anomaly Detection",
+      date: "May - August 2026",
+      bullets: [
+        "Wired and configured a VFD-controlled AC motor system, operating the motor at 60 Hz through VFD keypad.",
+        "Integrated a Modbus RTU RS-485 vibration sensor and collected RPM and tri-axis vibration data under normal and simulated fault conditions for Isolation Forest model training.",
+        "Developed a Python-based real-time monitoring system to classify motor operating conditions and trigger a LED after detecting 7 consecutive fault predictions."
+      ],
+      tech: ["VFD", "Modbus", "RS-485", "Machine Learning", "Tachometer", "Vibration Sensors"],
+      media: [
+        { type: "video", src: "https://youtu.be/htb_OXKQ5E8" },
+        { type: "video", src: "https://youtu.be/rGfmoa_EP80" }
+        // { type: "image", src: "PASTE_GOOGLE_DRIVE_OR_IMAGE_LINK" },
+        // { type: "video", src: "PASTE_YOUTUBE_OR_DRIVE_VIDEO_LINK" },
+      ]
+    },
+    {
+      tag: "PRJ-02 · DC Motor Control",
       title: "Closed-Loop DC Motor Control with PID & Wireless Telemetry",
       date: "May 2026",
       bullets: [
@@ -431,7 +448,7 @@ const CONFIG = {
       ]
     },
     {
-      tag: "PRJ-02 · Control Panel",
+      tag: "PRJ-03 · Control Panel",
       title: "Industrial Automation Control Panel",
       date: "Aug – Dec 2025",
       bullets: [
@@ -447,7 +464,7 @@ const CONFIG = {
       ]
     },
     {
-      tag: "PRJ-03 · Automation",
+      tag: "PRJ-04 · Automation",
       title: "Automated Drink Mixer",
       date: "Nov – Dec 2025",
       bullets: [
@@ -462,7 +479,7 @@ const CONFIG = {
       ]
     },
     {
-      tag: "PRJ-04 · Automation",
+      tag: "PRJ-05 · Automation",
       title: "Automated Parking Garage",
       date: "Jul – Aug 2025",
       bullets: [
